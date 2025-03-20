@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doa & Ucapan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0e4ec;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #5c67f2;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #4a54e1;
+        }
+        .comments {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .comment {
+            background: #f1f1f1;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .comment strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Doa & Ucapan</h2>
+        <input type="text" id="name" placeholder="Masukkan Nama Anda">
+        <textarea id="message" placeholder="Tulis ucapan Anda..."></textarea>
+        <button onclick="addComment()">Kirim</button>
+
+        <div class="comments" id="commentsSection">
+            <!-- Ucapan akan muncul di sini -->
+        </div>
+    </div>
+
+    <script>
+        function addComment() {
+            let name = document.getElementById("name").value;
+            let message = document.getElementById("message").value;
+
+            if (name === "" || message === "") {
+                alert("Harap isi Nama dan Ucapan!");
+                return;
+            }
+
+            let commentSection = document.getElementById("commentsSection");
+
+            let newComment = document.createElement("div");
+            newComment.classList.add("comment");
+            newComment.innerHTML = `<strong>${name}:</strong> <p>${message}</p>`;
+
+            commentSection.prepend(newComment);
+
+            // Hapus input setelah mengirim
+            document.getElementById("name").value = "";
+            document.getElementById("message").value = "";
+        }
+    </script>
+
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
